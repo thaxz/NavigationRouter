@@ -31,6 +31,9 @@ struct ContentView: View {
                 .navigationDestination(for: Food.self) { food in
                     FoodDetailView(food: food)
                 }
+                .navigationDestination(for: Drink.self) { drink in
+                   DrinkDetailView(drink: drink)
+                }
             }
         }
 }
