@@ -14,14 +14,14 @@ struct ContentView: View {
                     Section("Foods"){
                         ForEach(foods) { food in
                             NavigationLink(value: food) {
-                                FoodItemView(food: food)
+                                MenuItemRow(item: food)
                             }
                         }
                     }
                     Section("Drinks"){
                         ForEach(drinks) { drink in
                             NavigationLink(value: drink) {
-                               // FoodItemView(food: food)
+                               MenuItemRow(item: drink)
                             }
                         }
                     }
