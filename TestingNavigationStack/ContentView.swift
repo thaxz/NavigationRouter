@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-            NavigationView {
+            NavigationStack {
                 List {
                     ForEach(foods) { food in
-                        NavigationLink {
-                            FoodDetailView(food: food)
-                        } label: {
+                        NavigationLink(value: food) {
                             FoodItemView(food: food)
                         }
                     }
                 }
                 .listStyle(.insetGrouped)
                 .navigationTitle("Menu")
-                
+                .navigationDestination(for: Food.self) { food in
+                    FoodDetailView(food: food)
+                }
             }
         }
 }
