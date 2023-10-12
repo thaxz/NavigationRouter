@@ -12,11 +12,10 @@ struct ContentView: View {
             NavigationView {
                 List {
                     ForEach(foods) { food in
-                        
                         NavigationLink {
-                           // FoodDetailView(food: food)
+                            FoodDetailView(food: food)
                         } label: {
-                          //  FoodItemView(food: food)
+                            FoodItemView(food: food)
                         }
                     }
                 }

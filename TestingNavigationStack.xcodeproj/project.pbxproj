@@ -13,6 +13,7 @@
 		E920BFB52AD83AD200255C44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E920BFB42AD83AD200255C44 /* Preview Assets.xcassets */; };
 		E920BFBC2AD83C6B00255C44 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920BFBB2AD83C6B00255C44 /* Food.swift */; };
 		E920BFC02AD83CC100255C44 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920BFBF2AD83CC100255C44 /* FoodDetailView.swift */; };
+		E920BFC22AD83D1E00255C44 /* FoodItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920BFC12AD83D1E00255C44 /* FoodItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E920BFB42AD83AD200255C44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E920BFBB2AD83C6B00255C44 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		E920BFBF2AD83CC100255C44 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
+		E920BFC12AD83D1E00255C44 /* FoodItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				E920BFBF2AD83CC100255C44 /* FoodDetailView.swift */,
+				E920BFC12AD83D1E00255C44 /* FoodItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				E920BFB02AD83AD100255C44 /* ContentView.swift in Sources */,
 				E920BFC02AD83CC100255C44 /* FoodDetailView.swift in Sources */,
+				E920BFC22AD83D1E00255C44 /* FoodItemView.swift in Sources */,
 				E920BFAE2AD83AD100255C44 /* TestingNavigationStackApp.swift in Sources */,
 				E920BFBC2AD83C6B00255C44 /* Food.swift in Sources */,
 			);
