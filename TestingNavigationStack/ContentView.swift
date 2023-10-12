@@ -25,6 +25,13 @@ struct ContentView: View {
                             }
                         }
                     }
+                    Section("Desserts"){
+                        ForEach(desserts) { dessert in
+                            NavigationLink(value: dessert) {
+                               MenuItemRow(item: dessert)
+                            }
+                        }
+                    }
                 }
                 .listStyle(.insetGrouped)
                 .navigationTitle("Menu")
@@ -33,6 +40,16 @@ struct ContentView: View {
                 }
                 .navigationDestination(for: Drink.self) { drink in
                    DrinkDetailView(drink: drink)
+                }
+                .navigationDestination(for: Dessert.self) { dessert in
+                   DessertDetailView(dessert: dessert)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Surprise Me") {
+                            // get a random item
+                        }
+                    }
                 }
             }
         }
