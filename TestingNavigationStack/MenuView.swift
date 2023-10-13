@@ -42,7 +42,7 @@ struct MenuView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     CartButton(count: cartManager.items.count) {
-                        
+                        routeManager.push(to: .cart)
                     }
                 }
             }
@@ -52,6 +52,7 @@ struct MenuView: View {
             }
         }
         .environmentObject(cartManager)
+        .environmentObject(routeManager)
     }
 }
 
