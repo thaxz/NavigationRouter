@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var path = NavigationPath()
     var body: some View {
-            NavigationStack {
+        NavigationStack(path: $path){
                 List {
                     Section("Foods"){
                         ForEach(foods) { food in
@@ -47,7 +48,11 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button("Surprise Me") {
-                            // get a random item
+                            let items: [any Hashable] = foods + drinks + desserts
+                            if let randomItem = items.randomElement(){
+                                // triggering the destination pushing to a random item
+                                path.append(randomItem)
+                            }
                         }
                     }
                 }
