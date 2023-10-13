@@ -10,11 +10,12 @@ import SwiftUI
 struct DessertDetailView: View {
     
     @EnvironmentObject private var cartManager: ShoppingCartManager
+    @EnvironmentObject private var routerManager: NavigationRouter
+    
     let dessert: Dessert
     
     var body: some View {
         List {
-            
             Section {
                 LabeledContent("Icon", value: dessert.name)
                 LabeledContent("Name", value: dessert.title)
@@ -26,28 +27,22 @@ struct DessertDetailView: View {
                 }
                 LabeledContent("Cold?", value: dessert.isCold ? "✅" : "❌")
             }
-            
             Section("Description") {
                 Text(dessert.description)
             }
-            
             if dessert.allergies?.isEmpty == false ||
                 dessert.ingredients?.isEmpty == false {
-                
                 Section("Dietry") {
-                    
                     if let ingredientsCount = dessert.ingredients?.count {
                         let countVw = Text("x\(ingredientsCount)").font(.footnote).bold()
                         Text("\(countVw) Ingredients")
                     }
-                    
                     if let allergiesCount = dessert.allergies?.count {
                         let countVw = Text("x\(allergiesCount)").font(.footnote).bold()
                         Text("\(countVw) Allergies")
                     }
                 }
             }
-            
             if dessert.locations?.isEmpty == false {
                 
                 Section("Locations") {
@@ -58,17 +53,15 @@ struct DessertDetailView: View {
                     }
                 }
             }
-
-            
             Section {
                 Button {
                     cartManager.add(dessert)
+                    routerManager.reset()
                 } label: {
                     Label("Add to cart", systemImage: "cart")
                         .symbolVariant(.fill)
                 }
             }
-
         }
         .navigationTitle(dessert.title)
     }
@@ -79,6 +72,7 @@ struct DessertDetailView_Previews: PreviewProvider {
         NavigationStack {
             DessertDetailView(dessert: desserts[0])
                 .environmentObject(ShoppingCartManager())
+                .environmentObject(NavigationRouter())
         }
     }
 }
