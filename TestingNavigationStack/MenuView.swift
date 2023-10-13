@@ -11,37 +11,29 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @State private var path: NavigationPath = NavigationPath()
+    @StateObject private var routeManager = NavigationRouter()
     @StateObject private var cartManager = ShoppingCartManager()
     
     var body: some View {
-        
-        NavigationStack(path: $path) {
-            
+        NavigationStack(path: $routeManager.routes) {
             List {
-                
                 Section("Foods") {
                     ForEach(foods) { food in
-                        
-                        NavigationLink(value: food) {
+                        NavigationLink(value: Route.menuItem(item: food)) {
                             MenuItemRow(item: food)
                         }
                     }
                 }
-                
                 Section("Drinks") {
                     ForEach(drinks) { drink in
-                        
-                        NavigationLink(value: drink) {
+                        NavigationLink(value: Route.menuItem(item: drink)) {
                             MenuItemRow(item: drink)
                         }
                     }
                 }
-                
                 Section("Desserts") {
                     ForEach(desserts) { dessert in
-                        
-                        NavigationLink(value: dessert) {
+                        NavigationLink(value: Route.menuItem(item: dessert)) {
                             MenuItemRow(item: dessert)
                         }
                     }
@@ -55,14 +47,21 @@ struct MenuView: View {
                 }
             }
             .navigationTitle("Menu")
-            .navigationDestination(for: Food.self) { item in
-                FoodDetailView(food: item)
-            }
-            .navigationDestination(for: Drink.self) { item in
-                DrinkDetailView(drink: item)
-            }
-            .navigationDestination(for: Dessert.self) { item in
-                DessertDetailView(dessert: item)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .menuItem(let item):
+                    // switching according to item type
+                    switch item {
+                    case is Food:
+                        FoodDetailView(food: item as! Food)
+                    case is Drink:
+                        DrinkDetailView(drink: item as! Drink)
+                    case is Dessert:
+                        DessertDetailView(dessert: item as! Dessert)
+                    default:
+                        EmptyView()
+                    }
+                }
             }
         }
         .environmentObject(cartManager)
