@@ -58,7 +58,7 @@ struct DessertDetailView: View {
             Section {
                 Button {
                     cartManager.add(dessert)
-                    routerManager.reset()
+                    routerManager.popToRoot()
                 } label: {
                     Label("Add to cart", systemImage: "cart")
                         .symbolVariant(.fill)

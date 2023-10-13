@@ -18,8 +18,13 @@ final class NavigationRouter: ObservableObject {
     }
     
     // Back to root
-    func reset(){
+    func popToRoot(){
         routes = []
+    }
+    
+    // Back one view
+    func popToView(){
+        _ = routes.popLast()
     }
     
 }

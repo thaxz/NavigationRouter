@@ -16,7 +16,7 @@ struct AllergiesDetailView: View {
         List {
             Section{
                 Button("back to root"){
-                    routerManager.reset()
+                    routerManager.popToRoot()
                 }
             }
             Section {
