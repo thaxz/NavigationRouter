@@ -37,7 +37,7 @@ struct LocationMapView: View {
                         
                         
                         Button("Back to Locations") {
-                            routerManager.popToView()
+                            routerManager.popToLast()
                         }
                         
                     }

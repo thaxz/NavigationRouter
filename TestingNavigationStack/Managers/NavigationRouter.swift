@@ -23,7 +23,7 @@ final class NavigationRouter: ObservableObject {
     }
     
     // Back one view
-    func popToView(){
+    func popToLast(){
         _ = routes.popLast()
     }
     
