@@ -23,6 +23,10 @@
 		E92B71FE2AD97D9A00F85D34 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B71FD2AD97D9A00F85D34 /* CartItem.swift */; };
 		E92B72032AD97E0000F85D34 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B72022AD97E0000F85D34 /* CartButton.swift */; };
 		E92B72052AD97E2100F85D34 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B72042AD97E2100F85D34 /* CartView.swift */; };
+		E92B72072AD97E5800F85D34 /* AllergieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B72062AD97E5800F85D34 /* AllergieDetailView.swift */; };
+		E92B72092AD97E8600F85D34 /* IngredientsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B72082AD97E8600F85D34 /* IngredientsDetailView.swift */; };
+		E92B720B2AD97EAE00F85D34 /* LocationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B720A2AD97EAE00F85D34 /* LocationsDetailView.swift */; };
+		E92B720D2AD97ECA00F85D34 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B720C2AD97ECA00F85D34 /* LocationMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		E92B71FD2AD97D9A00F85D34 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		E92B72022AD97E0000F85D34 /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
 		E92B72042AD97E2100F85D34 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		E92B72062AD97E5800F85D34 /* AllergieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergieDetailView.swift; sourceTree = "<group>"; };
+		E92B72082AD97E8600F85D34 /* IngredientsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDetailView.swift; sourceTree = "<group>"; };
+		E92B720A2AD97EAE00F85D34 /* LocationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDetailView.swift; sourceTree = "<group>"; };
+		E92B720C2AD97ECA00F85D34 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 				E92B72002AD97DC300F85D34 /* Rows */,
 				E92B71FF2AD97DB300F85D34 /* Details */,
 				E92B72042AD97E2100F85D34 /* CartView.swift */,
+				E92B720C2AD97ECA00F85D34 /* LocationMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +140,9 @@
 				E920BFBF2AD83CC100255C44 /* FoodDetailView.swift */,
 				E920BFCB2AD846AE00255C44 /* DessertDetailView.swift */,
 				E920BFC72AD8452C00255C44 /* DrinkDetailView.swift */,
+				E92B72062AD97E5800F85D34 /* AllergieDetailView.swift */,
+				E92B72082AD97E8600F85D34 /* IngredientsDetailView.swift */,
+				E92B720A2AD97EAE00F85D34 /* LocationsDetailView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -221,14 +233,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92B72092AD97E8600F85D34 /* IngredientsDetailView.swift in Sources */,
 				E920BFC62AD843D100255C44 /* MenuItem.swift in Sources */,
 				E92B71FC2AD97D7A00F85D34 /* ShoppingCartManager.swift in Sources */,
 				E92B72032AD97E0000F85D34 /* CartButton.swift in Sources */,
 				E920BFB02AD83AD100255C44 /* ContentView.swift in Sources */,
 				E920BFCC2AD846AE00255C44 /* DessertDetailView.swift in Sources */,
 				E920BFC02AD83CC100255C44 /* FoodDetailView.swift in Sources */,
+				E92B72072AD97E5800F85D34 /* AllergieDetailView.swift in Sources */,
 				E920BFC22AD83D1E00255C44 /* MenuItemRow.swift in Sources */,
 				E920BFAE2AD83AD100255C44 /* TestingNavigationStackApp.swift in Sources */,
+				E92B720D2AD97ECA00F85D34 /* LocationMapView.swift in Sources */,
+				E92B720B2AD97EAE00F85D34 /* LocationsDetailView.swift in Sources */,
 				E92B72052AD97E2100F85D34 /* CartView.swift in Sources */,
 				E920BFC42AD842B700255C44 /* Drink.swift in Sources */,
 				E920BFC82AD8452C00255C44 /* DrinkDetailView.swift in Sources */,
