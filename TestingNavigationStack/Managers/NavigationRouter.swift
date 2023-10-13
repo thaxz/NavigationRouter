@@ -10,7 +10,7 @@ import SwiftUI
 
 final class NavigationRouter: ObservableObject {
     
-    @Published var routes = NavigationPath()
+    @Published var routes: [Route] = []
     
     // Pushing to any view that is inside of our enum
     func push(to screen: Route){
@@ -19,7 +19,7 @@ final class NavigationRouter: ObservableObject {
     
     // Back to root
     func reset(){
-        routes.removeLast(routes.count)
+        routes = []
     }
     
 }
