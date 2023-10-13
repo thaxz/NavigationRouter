@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum Route: Hashable {
+enum Route: View, Hashable {
+    
     // to pass the required item when navigating
     case menuItem(item: any MenuItem)
     
@@ -21,6 +23,24 @@ enum Route: Hashable {
         switch (lhs, rhs){
         case (.menuItem(let lshItem), .menuItem(let rhsItem)):
             return lshItem.id == rhsItem.id
+        }
+    }
+    
+    // Building Views according to switch self
+    var body: some View {
+        switch self {
+        case .menuItem(let item):
+            // switching according to item type
+            switch item {
+            case is Food:
+                FoodDetailView(food: item as! Food)
+            case is Drink:
+                DrinkDetailView(drink: item as! Drink)
+            case is Dessert:
+                DessertDetailView(dessert: item as! Dessert)
+            default:
+                EmptyView()
+            }
         }
     }
     

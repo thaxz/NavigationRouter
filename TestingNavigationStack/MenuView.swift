@@ -48,20 +48,7 @@ struct MenuView: View {
             }
             .navigationTitle("Menu")
             .navigationDestination(for: Route.self) { route in
-                switch route {
-                case .menuItem(let item):
-                    // switching according to item type
-                    switch item {
-                    case is Food:
-                        FoodDetailView(food: item as! Food)
-                    case is Drink:
-                        DrinkDetailView(drink: item as! Drink)
-                    case is Dessert:
-                        DessertDetailView(dessert: item as! Dessert)
-                    default:
-                        EmptyView()
-                    }
-                }
+                route
             }
         }
         .environmentObject(cartManager)
