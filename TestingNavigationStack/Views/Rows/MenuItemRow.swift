@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuItemRow: View {    
-    let item: MenuItem
+    let item: any MenuItem
     var body: some View {
         LabeledContent {
             Text(item.price,

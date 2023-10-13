@@ -5,6 +5,8 @@
 //  Created by thaxz on 13/10/23.
 //
 
+import SwiftUI
+
 struct AllergiesDetailView: View {
     
     let allergies: [Allergie]
