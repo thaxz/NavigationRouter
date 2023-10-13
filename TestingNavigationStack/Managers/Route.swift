@@ -15,7 +15,7 @@ enum Route {
     case menuItem(item: any MenuItem)
     case cart
     case ingredients(item: [Ingredient])
-    
+    case allergies(item: [Allergie])
     
 }
 
@@ -41,6 +41,8 @@ extension Route: View {
             CartView()
         case .ingredients(let items):
             IngredientsDetailView(ingredients: items)
+        case .allergies(let items):
+            AllergiesDetailView(allergies: items)
         }
     }
 }
@@ -62,6 +64,8 @@ extension Route: Hashable {
         case (.cart, .cart):
             return true
         case (.ingredients(let lshItem), .ingredients(let rhsItem)):
+            return lshItem == rhsItem
+        case (.allergies(let lshItem), .allergies(let rhsItem)):
             return lshItem == rhsItem
         default:
             return false

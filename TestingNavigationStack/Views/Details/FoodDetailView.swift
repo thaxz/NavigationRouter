@@ -31,14 +31,20 @@ struct FoodDetailView: View {
             }
             if food.allergies?.isEmpty == false ||
                food.ingredients?.isEmpty == false {
+                
                 Section("Dietry") {
-                    if let ingredientsCount = food.ingredients?.count {
-                        let countVw = Text("x\(ingredientsCount)").font(.footnote).bold()
-                        Text("\(countVw) Ingredients")
+                    if let ingredients = food.ingredients {
+                        NavigationLink(value: Route.ingredients(item: ingredients)) {
+                            let countVw = Text("x\(ingredients.count)").font(.footnote).bold()
+                            Text("\(countVw) Ingredients")
+                        }
+                        
                     }
-                    if let allergiesCount = food.allergies?.count {
-                        let countVw = Text("x\(allergiesCount)").font(.footnote).bold()
-                        Text("\(countVw) Allergies")
+                    if let allergies = food.allergies{
+                        NavigationLink(value: Route.allergies(item: allergies)) {
+                            let countVw = Text("x\(allergies.count)").font(.footnote).bold()
+                            Text("\(countVw) Allergies")
+                        }
                     }
                 }
             }
