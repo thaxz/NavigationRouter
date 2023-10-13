@@ -16,7 +16,7 @@ enum Route {
     case cart
     case ingredients(item: [Ingredient])
     case allergies(item: [Allergie])
-    
+    case locations(places: [Location])
 }
 
 // MARK: Separating View Builders
@@ -43,6 +43,8 @@ extension Route: View {
             IngredientsDetailView(ingredients: items)
         case .allergies(let items):
             AllergiesDetailView(allergies: items)
+        case .locations(let places):
+            LocationsDetailView(locations: places)
         }
     }
 }
@@ -66,6 +68,8 @@ extension Route: Hashable {
         case (.ingredients(let lshItem), .ingredients(let rhsItem)):
             return lshItem == rhsItem
         case (.allergies(let lshItem), .allergies(let rhsItem)):
+            return lshItem == rhsItem
+        case (.locations(let lshItem), .locations(let rhsItem)):
             return lshItem == rhsItem
         default:
             return false
